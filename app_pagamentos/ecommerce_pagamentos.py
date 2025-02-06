@@ -309,12 +309,11 @@ def admin_dashboard():
     vendas_por_mes = defaultdict(float)
 
     for pedido in pedidos:
-        # Remover o símbolo "R$" e substituir a vírgula por ponto (caso o valor tenha separador de milhar)
         valor = float(pedido.valor_total.replace('R$', '').replace('.', '').replace(',', '.'))
 
         # Usando a nova coluna 'data_pedido' para pegar a data do pedido
-        data_pedido = pedido.data_pedido  # Agora você tem um objeto datetime
-        mes = data_pedido.strftime('%b')  # Exemplo: 'Jan', 'Fev', etc.
+        data_pedido = pedido.data_pedido  
+        mes = data_pedido.strftime('%b') 
         
         vendas_por_mes[mes] += valor
 
