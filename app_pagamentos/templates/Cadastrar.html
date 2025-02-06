@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Cadastro{% endblock %}
+{% block content %}
+
+<div class="container mt-5 text-center">
+    <img class="mb-4" src="{{ url_for('static', filename='imagens/img.jpg') }}" style="width: 200px" alt="Logo">
+    
+    <h1 class="h3 mb-3 font-weight-normal">Crie a sua conta</h1>
+
+    <form method="POST" class="form-register">
+        {{ form.hidden_tag() }}
+
+        <div class="form-floating mb-3">
+            {{ form.nome(class="form-control", id="nome", placeholder="Informe seu username") }}
+            <label for="nome">Nome</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            {{ form.email(class="form-control", id="email", placeholder="Informe seu E-mail") }}
+            <label for="email">E-mail</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            {{ form.senha1(class="form-control", id="senha1", placeholder="Informe sua senha") }}
+            <label for="senha1">Senha</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            {{ form.senha2(class="form-control", id="senha2", placeholder="Confirme sua senha") }}
+            <label for="senha2">Repita a senha</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            <h5>Já tem cadastro?</h5>
+            <a class="btn btn-sm btn-primary" href="{{url_for("page_login")}}">Login</a>
+        </div>
+
+        <div class="d-grid">
+            {{ form.submit(class="btn btn-lg btn-dark") }}
+        </div>
+    </form>
+</div>
+
+{% endblock %}

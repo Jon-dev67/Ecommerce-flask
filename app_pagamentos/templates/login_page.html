@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+   Página de Login
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <img class="mb-4" src="{{ url_for('static', filename='imagens/img.jpg') }}" style="width: 200px" alt="Logo">
+    
+    <h1 class="h3 mb-3 font-weight-normal">Faça o Login</h1>
+
+    <form method="POST" class="form-signin">
+        {{ form.hidden_tag() }}
+
+        <div class="form-floating mb-3">
+            {{ form.usuario(class="form-control", id="usuario", placeholder="Digite o usuário") }}
+            <label for="usuario">Usuário</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            {{ form.senha(class="form-control", id="senha", placeholder="Digite a senha") }}
+            <label for="senha">Senha</label>
+        </div>
+
+        <div class="checkbox mb-3">
+            <h5>Ainda não tem cadastro?</h5>
+            <a class="btn btn-sm btn-primary" href="{{url_for('Cadastrar_usu')}}">Cadastre-se</a>
+        </div>
+
+        <div class="d-grid">
+            {{ form.submit(class="btn btn-lg btn-dark") }}
+        </div>
+    </form>
+</div>
+{% endblock %}

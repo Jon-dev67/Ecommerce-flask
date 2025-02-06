@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Adicionar Novo Produto</h2>
+ <form action="{{ url_for('novo_produto')}} " method="POST" class="form-register">
+        {{ form.hidden_tag() }}
+
+        <div class="form-floating mb-3">
+            {{ form.nome(class="form-control", id="nome", placeholder="Informe seu username") }}
+            <label for="nome">Nome</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            {{ form.descricao(class="form-control", id="descricao", placeholder="Informe a descrição do produto.") }}
+            <label for="descricao">descrição</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            {{ form.preco(class="form-control", id="preco", placeholder="Informe o preço do produto.") }}
+            <label for="preco">preco</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            {{ form.estoque(class="form-control", id="estoque", placeholder="quantidade em estoque do produto.") }}
+            <label for="estoque">Estoque</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            {{ form.imagem(class="form-control", id="imagem", placeholder="nome da foto do produto, ATENÇÃO O NOME TEM QUE SER EXATAMENTE IGUAL.") }}
+            <label for="imagem">imagen do produto.</label>
+        </div>
+
+        <div class="d-grid">
+            {{ form.submit(class="btn btn-lg btn-dark") }}
+        </div>
+    </form>
+{% endblock %}

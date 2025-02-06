@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Produtos - Minha Loja{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-5 font-weight-bold">Produtos</h2>
+    <div class="row">
+        {% for produto in produtos %}
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm border-light rounded">
+                <img src="{{ url_for('static', filename='imagens/' + produto.imagen) }}" class="card-img-top" alt="{{ produto.nome }}">
+                <div class="card-body text-center">
+                    <h5 class="card-title font-weight-bold text-truncate" style="max-width: 200px;">{{ produto.nome }}</h5>
+                    <p class="card-text text-muted">R$ {{ produto.preco }}</p>
+                    <a href="{{ url_for('Produto_page', id=produto.id) }}" class="btn btn-dark btn-block btn-lg mt-3">Ver Produto</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
