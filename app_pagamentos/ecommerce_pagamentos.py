@@ -24,9 +24,9 @@ login_manager.login_message="por favor faça o login"
 login_manager.login_message_category="info"
 
 # configurando as chaves da API da Stripe 
-stripe.api_key = "sk_test_51QnXZOPoy9oWPnAaYLIiGLPSkUKvEq7Ugm3zNd0qu88piLI8kPZ2kSUsaAPx4olQfn1ztIzvQumDveOx4Abxef9f00oxKla6X1"
+stripe.api_key = "chave-secreta"
 
-STRIPE_PUBLIC_KEY = "pk_test_51QnXZOPoy9oWPnAa34gzCOBufUIXVPk71D7a5QWdqDu5ySIvBs28EPA70HWDQm3SFEn0uJqvynoXMyD26b6PSu8j00smSUm6Fv"
+STRIPE_PUBLIC_KEY = "chave-publica"
 
 app.config["STRIPE_PUBLIC_KEY"] = STRIPE_PUBLIC_KEY
 
